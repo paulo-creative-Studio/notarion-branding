@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <linearGradient id="notarionGold" x1="100" y1="100" x2="900" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#fae89e" />
+      <stop offset="40%" stop-color="#dfb744" />
+      <stop offset="75%" stop-color="#cb9d27" />
+      <stop offset="100%" stop-color="#93741d" />
+    </linearGradient>
+  </defs>
+
+  <!-- Circular dark badge from Image 1 -->
+  <circle cx="500" cy="500" r="490" fill="#18191c" stroke="#dfb744" stroke-width="8" stroke-opacity="0.35" />
+
+  <!-- Gold Notarion Emblem -->
+  <g transform="translate(0, 60)" fill="url(#notarionGold)">
+    <!-- Top Orbital Arch -->
+    <path d="M 242 372 C 270 290, 375 160, 530 160 C 655 160, 745 220, 798 305 L 760 308 C 715 235, 638 185, 528 185 C 388 185, 290 285, 242 372 Z" />
+
+    <!-- Left Wing Diamond Point -->
+    <path d="M 15 540 L 242 372 C 220 420, 190 475, 190 540 C 190 605, 220 660, 242 700 L 15 540 Z" />
+
+    <!-- Bottom Orbital Tail -->
+    <path d="M 222 545 C 222 610, 250 670, 290 725 C 345 800, 440 855, 545 855 C 615 855, 680 825, 725 775 C 710 782, 675 798, 630 808 C 525 830, 430 800, 360 735 C 305 680, 260 605, 260 545 Z" />
+
+    <!-- Central Upright Wedge (Left Stem of N) -->
+    <path d="M 385 285 L 570 550 L 565 715 L 430 715 L 385 285 Z" />
+
+    <!-- Right Calligraphic Ribbon & Swirl (Right Arch of N) -->
+    <path d="M 586 432 C 586 405, 608 388, 636 388 C 630 435, 615 495, 615 548 C 615 625, 650 680, 715 700 C 785 720, 845 680, 885 620 L 985 570 C 925 685, 825 755, 720 742 C 625 730, 570 655, 570 555 C 570 500, 578 455, 586 432 Z" />
+
+    <!-- Right Wing Contour -->
+    <path d="M 798 305 C 830 355, 875 425, 920 500 L 985 570 L 925 572 C 875 490, 825 390, 798 305 Z" />
+  </g>
+</svg>

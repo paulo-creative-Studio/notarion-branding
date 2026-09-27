@@ -1,0 +1,7 @@
+{
+  "name": "Notarion Brand",
+  "description": "Soluções digitais para negócios locais: sites profissionais, vitrines com modelos virtuais, cardápios digitais, Google Maps, WhatsApp e automações práticas.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
