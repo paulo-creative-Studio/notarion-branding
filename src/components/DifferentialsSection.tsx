@@ -1,7 +1,6 @@
 import React from 'react';
 import { DIFFERENTIALS_DATA } from '../data/content';
 import { Target, Palette, Zap, Layers, Sparkles } from 'lucide-react';
-import { NotarionBrandIcon } from './NotarionLogo';
 
 export const DifferentialsSection: React.FC = () => {
   const getIcon = (idx: number) => {
@@ -62,47 +61,118 @@ export const DifferentialsSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Official Brand Identity Showcase Card (Matching Image 3) */}
-        <div className="mt-14 rounded-2xl bg-black border border-[#d4af37]/40 p-8 sm:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.12)]">
+        {/* Card: Por que escolher a Notarion? (Foco total no cliente e quebra de objeções) */}
+        <div id="por-que-notarion" className="mt-14 rounded-2xl bg-black border border-[#d4af37]/40 p-8 sm:p-12 relative overflow-hidden shadow-[0_0_50px_rgba(212,175,55,0.12)]">
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#d4af37]/10 blur-[100px] pointer-events-none rounded-full" />
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            <div className="lg:col-span-5 flex flex-col items-center justify-center text-center p-6 sm:p-8 rounded-2xl bg-zinc-950/90 border border-zinc-800 shadow-2xl">
-              <NotarionBrandIcon className="w-24 h-24 sm:w-28 sm:h-28 mb-4" glow />
-              
-              <div className="text-3xl sm:text-4xl text-[#dfb744] font-serif italic tracking-wide select-none drop-shadow-[0_2px_12px_rgba(212,175,55,0.4)]">
-                <span className="text-4xl sm:text-5xl not-italic font-normal" style={{ fontFamily: 'Georgia, serif' }}>N</span>otarion
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10">
+            {/* Coluna Esquerda: Por que empresas escolhem a Notarion */}
+            <div className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-zinc-950/90 border border-zinc-800 shadow-2xl space-y-5">
+              <div className="space-y-1">
+                <span className="text-[11px] font-semibold text-[#d4af37] tracking-wider uppercase block">
+                  Vantagens Reais
+                </span>
+                <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                  Por que empresas escolhem a Notarion?
+                </h4>
               </div>
-              
-              <div className="text-xs sm:text-sm font-semibold tracking-[0.35em] text-[#e6ca65] uppercase mt-1 select-none">
-                BRANDING
+
+              <div className="space-y-3 pt-2 text-xs sm:text-sm text-zinc-300">
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#d4af37] font-bold text-base leading-none">✓</span>
+                  <span>Veja uma demonstração antes de contratar</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#d4af37] font-bold text-base leading-none">✓</span>
+                  <span>Sem mensalidade obrigatória</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#d4af37] font-bold text-base leading-none">✓</span>
+                  <span>Atendimento direto e sem burocracia</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#d4af37] font-bold text-base leading-none">✓</span>
+                  <span>Funciona em celular, tablet e computador</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#d4af37] font-bold text-base leading-none">✓</span>
+                  <span>Integração com WhatsApp e redes sociais</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#d4af37] font-bold text-base leading-none">✓</span>
+                  <span>Projeto adaptado ao seu tipo de negócio</span>
+                </div>
+                <div className="flex items-start gap-2.5">
+                  <span className="text-[#d4af37] font-bold text-base leading-none">✓</span>
+                  <span>Suporte opcional após a entrega</span>
+                </div>
               </div>
             </div>
 
-            <div className="lg:col-span-7 space-y-4">
-              <div className="text-xs font-semibold text-[#d4af37] tracking-wider uppercase">
-                A Identidade Notarion
+            {/* Coluna Direita: O que você recebe & Resultado */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-2">
+                <div className="text-xs font-semibold text-[#d4af37] tracking-wider uppercase">
+                  POR QUE ESCOLHER A NOTARION?
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+                  Soluções digitais criadas para gerar resultado no mundo real.
+                </h3>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
-                Design com propósito para fortalecer marcas locais reais.
-              </h3>
+
               <p className="text-sm text-zinc-300 leading-relaxed">
-                Nossa identidade visual une a precisão geométrica do símbolo com o requinte da tipografia clássica, refletindo nossa missão: elevar pequenos e médios negócios ao patamar de grandes marcas, com tecnologias funcionais e presença digital imponente.
+                Desenvolvemos sites, vitrines digitais e automações pensadas para facilitar o contato entre sua empresa e seus clientes.
               </p>
-              
-              <div className="pt-2 flex flex-wrap items-center gap-4 text-xs text-zinc-400">
-                <span className="flex items-center gap-1.5 text-zinc-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]" />
-                  Design Exclusivo
-                </span>
-                <span className="flex items-center gap-1.5 text-zinc-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]" />
-                  Tecnologia Prática
-                </span>
-                <span className="flex items-center gap-1.5 text-zinc-300">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37]" />
-                  Foco em Conversão Real
-                </span>
+
+              <p className="text-sm text-zinc-300 leading-relaxed">
+                Nosso objetivo não é apenas criar páginas bonitas, mas entregar ferramentas úteis para divulgar produtos, apresentar serviços, receber contatos e fortalecer a presença digital do seu negócio.
+              </p>
+
+              {/* O que você recebe */}
+              <div className="space-y-3 pt-2">
+                <h4 className="text-sm font-bold text-[#f3df89] tracking-wide uppercase">
+                  O que você recebe:
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-zinc-200">
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#d4af37] font-bold">✓</span>
+                    <span>Demonstração gratuita antes de contratar</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#d4af37] font-bold">✓</span>
+                    <span>Projeto adaptado ao seu segmento</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#d4af37] font-bold">✓</span>
+                    <span>Site responsivo para celular, tablet e computador</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#d4af37] font-bold">✓</span>
+                    <span>Integração com WhatsApp e redes sociais</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#d4af37] font-bold">✓</span>
+                    <span>Estrutura pensada para facilitar o contato dos clientes</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-[#d4af37] font-bold">✓</span>
+                    <span>Entrega rápida e suporte opcional após a publicação</span>
+                  </div>
+                  <div className="flex items-start gap-2 sm:col-span-2">
+                    <span className="text-[#d4af37] font-bold">✓</span>
+                    <span>Atendimento direto, sem burocracia</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Resultado */}
+              <div className="pt-2 border-t border-zinc-800 space-y-1.5">
+                <h4 className="text-xs font-bold text-[#d4af37] tracking-wider uppercase">
+                  Resultado
+                </h4>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                  Mais profissionalismo, mais praticidade para seus clientes e uma presença digital preparada para acompanhar o crescimento da sua empresa.
+                </p>
               </div>
             </div>
           </div>

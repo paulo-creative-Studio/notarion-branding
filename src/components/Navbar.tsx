@@ -14,36 +14,36 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal, onOpenCallModal
   return (
     <header className="sticky top-0 z-50 w-full bg-[#08090b]/95 backdrop-blur-md border-b border-zinc-800 shadow-xl">
       {/* LINHA 1 SUPERIOR: Logo Notarion Brand à esquerda + Botão Grande Dourado à direita */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-1.5 sm:gap-2">
         
         {/* Logo NOTARION BRAND à esquerda com o favicon/emblema oficial */}
         <a 
           href="#" 
-          className="group flex items-center gap-2 sm:gap-3 tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] rounded-lg shrink-0"
+          className="group flex items-center gap-1.5 sm:gap-3 tracking-tight focus:outline-none focus-visible:ring-2 focus-visible:ring-[#d4af37] rounded-lg min-w-0"
         >
           <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-gradient-to-b from-[#1c1d22] to-[#0f1013] border border-[#d4af37]/45 p-1 sm:p-1.5 flex items-center justify-center shadow-[0_0_15px_rgba(212,175,55,0.2)] sm:shadow-[0_0_20px_rgba(212,175,55,0.25)] group-hover:border-[#d4af37]/80 group-hover:shadow-[0_0_25px_rgba(212,175,55,0.45)] transition-all shrink-0">
             <NotarionBrandIcon className="w-full h-full" glow />
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0">
             <div className="flex items-baseline gap-1 sm:gap-1.5 leading-none">
-              <span className="font-display font-extrabold text-sm sm:text-lg lg:text-xl tracking-wider text-white group-hover:text-[#f3df89] transition-colors">
+              <span className="font-display font-extrabold text-xs sm:text-lg lg:text-xl tracking-wider text-white group-hover:text-[#f3df89] transition-colors truncate">
                 NOTARION
               </span>
-              <span className="font-display font-semibold text-[10px] sm:text-xs lg:text-sm tracking-widest text-[#d4af37]">
+              <span className="font-display font-semibold text-[9px] sm:text-xs lg:text-sm tracking-widest text-[#d4af37]">
                 BRAND
               </span>
             </div>
-            <span className="text-[8px] sm:text-[9px] lg:text-[10px] uppercase tracking-wider text-zinc-400 font-medium mt-0.5 sm:mt-1">
+            <span className="text-[7.5px] sm:text-[9px] lg:text-[10px] uppercase tracking-wider text-zinc-400 font-medium mt-0.5 sm:mt-1 truncate">
               Soluções Digitais
             </span>
           </div>
         </a>
 
-        {/* Lado direito do topo: Botão Dourado (desktop mantido intocado, mobile reduzido ~10px) */}
-        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        {/* Lado direito do topo: Botão Dourado + Botão Hambúrguer móvel com folga lateral e microinteração deslizante */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 pr-1 sm:pr-0">
           <button
             onClick={onOpenDemoModal}
-            className="group relative inline-flex items-center gap-1 sm:gap-2.5 px-2 py-1.5 sm:px-6 sm:py-3 rounded-md sm:rounded-xl text-[10px] sm:text-sm font-bold text-black bg-gradient-to-r from-[#f3df89] via-[#d4af37] to-[#ba9324] hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_2px_10px_rgba(212,175,55,0.25)] sm:shadow-[0_2px_18px_rgba(212,175,55,0.35)] whitespace-nowrap cursor-pointer"
+            className="group relative inline-flex items-center gap-1 sm:gap-2.5 px-2 py-1.5 sm:px-6 sm:py-3 rounded-md sm:rounded-xl text-[10px] sm:text-sm font-bold text-black bg-gradient-to-r from-[#f3df89] via-[#d4af37] to-[#ba9324] hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_2px_10px_rgba(212,175,55,0.25)] sm:shadow-[0_2px_18px_rgba(212,175,55,0.35)] whitespace-nowrap cursor-pointer shrink-0"
           >
             <Sparkles className="w-2.5 h-2.5 sm:w-4 sm:h-4 text-black shrink-0" />
             <span className="inline sm:hidden">Demonstração</span>
@@ -51,13 +51,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal, onOpenCallModal
             <ArrowUpRight className="w-2.5 h-2.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
           </button>
 
-          {/* Gatilho do menu mobile em telas pequenas */}
+          {/* Gatilho do menu mobile em telas pequenas com folga e efeito de deslizamento para a esquerda ao aproximar o mouse ou toque */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 sm:p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 hover:text-white md:hidden focus:outline-none shrink-0"
+            className="p-1.5 sm:p-2.5 rounded-lg bg-zinc-900 border border-zinc-700/80 text-zinc-200 hover:text-white md:hidden focus:outline-none shrink-0 transition-transform duration-200 ease-out hover:-translate-x-1.5 active:-translate-x-2 shadow-sm"
             aria-label="Abrir Menu de Navegação"
+            title="Menu de navegação"
           >
-            {mobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
+            {mobileMenuOpen ? <X className="w-4 h-4 sm:w-5 sm:h-5 text-[#f3df89]" /> : <Menu className="w-4 h-4 sm:w-5 sm:h-5" />}
           </button>
         </div>
 

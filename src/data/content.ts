@@ -436,8 +436,8 @@ export const DIFFERENTIALS_DATA = [
     desc: "Não usamos fórmulas de grandes corporações. Nossas soluções são desenhadas para quem atende no balcão, no bairro e no WhatsApp."
   },
   {
-    title: "Visual profissional que impõe respeito",
-    desc: "Design sofisticado com tipografia elegante e acabamento preto e dourado, transmitindo confiança imediata a quem acessa."
+    title: "Apresentação profissional e confiável",
+    desc: "Estrutura moderna e organizada que transmite seriedade aos seus clientes e valoriza seus produtos e serviços desde o primeiro contato."
   },
   {
     title: "Tecnologia sem complicação",
