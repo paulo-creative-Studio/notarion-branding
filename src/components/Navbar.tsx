@@ -6,9 +6,14 @@ import { NotarionBrandIcon } from './NotarionLogo';
 interface NavbarProps {
   onOpenDemoModal: () => void;
   onOpenCallModal: () => void;
+  onOpenAssistantTab: (tab: 'menu' | 'ai' | 'triage') => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal, onOpenCallModal }) => {
+export const Navbar: React.FC<NavbarProps> = ({ 
+  onOpenDemoModal, 
+  onOpenCallModal,
+  onOpenAssistantTab
+}) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -105,13 +110,25 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal, onOpenCallModal
             </a>
           </nav>
 
-          {/* Agendar Conversa na linha de baixo à direita */}
-          <button
-            onClick={onOpenCallModal}
-            className="text-xs font-semibold text-zinc-300 hover:text-[#f3df89] px-3.5 py-1.5 rounded-lg border border-zinc-700/80 hover:border-[#d4af37]/50 bg-zinc-900/80 transition-all whitespace-nowrap cursor-pointer"
-          >
-            Agendar Conversa
-          </button>
+          <div className="flex items-center gap-3">
+            {/* Falar com Assistente - Elisângela */}
+            <button
+              onClick={() => onOpenAssistantTab('ai')}
+              className="text-xs font-semibold text-[#f3df89] hover:text-white px-3 py-1.5 rounded-lg border border-[#d4af37]/40 hover:border-[#d4af37] bg-[#d4af37]/10 transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5"
+              title="Falar com Assistente - Elisângela"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Falar com Assistente - Elisângela</span>
+            </button>
+
+            {/* Agendar Conversa na linha de baixo à direita */}
+            <button
+              onClick={onOpenCallModal}
+              className="text-xs font-semibold text-zinc-300 hover:text-[#f3df89] px-3.5 py-1.5 rounded-lg border border-zinc-700/80 hover:border-[#d4af37]/50 bg-zinc-900/80 transition-all whitespace-nowrap cursor-pointer"
+            >
+              Agendar Conversa
+            </button>
+          </div>
         </div>
       </div>
 
@@ -161,15 +178,44 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal, onOpenCallModal
             </a>
           </nav>
 
-          <div className="pt-4 border-t border-zinc-800 flex flex-col gap-3">
+          {/* Submenu de Atendimento no Mobile */}
+          <div className="pt-4 border-t border-zinc-800 flex flex-col gap-2.5">
+            <div className="text-[10px] font-semibold uppercase tracking-wider text-[#d4af37] px-1">
+              Canais de Atendimento
+            </div>
+
+            {/* Falar com Assistente - Elisângela */}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenAssistantTab('ai');
+              }}
+              className="w-full py-2.5 px-4 rounded-lg text-xs font-bold text-black bg-[#d4af37] hover:bg-[#e6ca65] text-center flex items-center justify-center gap-2 shadow-sm"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
+              <span>Falar com Assistente - Elisângela</span>
+            </button>
+
+            {/* FALAR COM A EQUIPE */}
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenAssistantTab('menu');
+              }}
+              className="w-full py-2.5 px-4 rounded-lg text-xs font-bold tracking-wider text-white bg-zinc-900 border border-zinc-700 hover:border-zinc-500 text-center flex items-center justify-center gap-2"
+            >
+              <span>FALAR COM A EQUIPE</span>
+            </button>
+
+            {/* Agendar Conversa */}
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenCallModal();
               }}
-              className="w-full py-2.5 px-4 rounded-lg text-xs font-semibold text-zinc-300 bg-zinc-900 border border-zinc-700 hover:text-white text-center"
+              className="w-full py-2 px-4 rounded-lg text-xs text-zinc-400 hover:text-white bg-transparent border border-zinc-800 text-center"
             >
-              Agendar Conversa
+              Agendar Reunião / Conversa
             </button>
           </div>
         </div>

@@ -27,6 +27,7 @@ export default function App() {
   const [selectedPackage, setSelectedPackage] = useState<PackageTier | null>(null);
   const [demoInitialSegment, setDemoInitialSegment] = useState<string | undefined>(undefined);
   const [demoInitialProject, setDemoInitialProject] = useState<string | undefined>(undefined);
+  const [assistantForceTab, setAssistantForceTab] = useState<'menu' | 'ai' | 'triage' | null>(null);
 
   const handleOpenDemoModal = (segmentOrProject?: string) => {
     if (segmentOrProject) {
@@ -50,12 +51,17 @@ export default function App() {
     setSelectedPackage(pkg);
   };
 
+  const handleOpenAssistantTab = (tab: 'menu' | 'ai' | 'triage') => {
+    setAssistantForceTab(tab);
+  };
+
   return (
     <div className="min-h-screen bg-[#090a0c] text-zinc-100 flex flex-col font-sans selection:bg-[#d4af37]/30 selection:text-[#fef08a]">
       {/* 3-Zone Top Navigation */}
       <Navbar 
         onOpenDemoModal={() => handleOpenDemoModal()} 
-        onOpenCallModal={handleOpenCallModal} 
+        onOpenCallModal={handleOpenCallModal}
+        onOpenAssistantTab={handleOpenAssistantTab}
       />
 
       <main className="flex-1">
@@ -121,8 +127,13 @@ export default function App() {
       {/* Structured Footer */}
       <Footer />
 
-      {/* Floating Smart WhatsApp Assistant */}
-      <WhatsAppAssistant />
+      {/* Floating Smart WhatsApp Assistant with Elisângela AI */}
+      <WhatsAppAssistant 
+        forceOpenTab={assistantForceTab}
+        onCloseForceOpen={() => setAssistantForceTab(null)}
+        onOpenCallModal={handleOpenCallModal}
+        onOpenDemoModal={() => handleOpenDemoModal()}
+      />
 
       {/* Interactive Modals */}
       <FreeDemoModal
