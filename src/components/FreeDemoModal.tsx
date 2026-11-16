@@ -67,7 +67,7 @@ export const FreeDemoModal: React.FC<FreeDemoModalProps> = ({
                 <NotarionBrandIcon className="w-4 h-4" glow />
                 Demonstração Gratuita sem compromisso
               </span>
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+              <h3 className="font-marcellus font-normal text-xl sm:text-2xl text-white tracking-tight">
                 Veja como a presença digital da sua empresa pode ficar antes de contratar
               </h3>
               <p className="text-xs text-zinc-400 leading-relaxed">
@@ -188,7 +188,7 @@ export const FreeDemoModal: React.FC<FreeDemoModalProps> = ({
             <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 mx-auto flex items-center justify-center">
               <Check className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-bold text-white">
+            <h3 className="font-marcellus font-normal text-xl text-white">
               Demonstração Solicitada!
             </h3>
             <p className="text-xs text-zinc-300 leading-relaxed max-w-sm mx-auto">

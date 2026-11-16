@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
 import { NotarionBrandIcon } from './NotarionLogo';
 
@@ -10,7 +10,6 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
-  onOpenDemoModal, 
   onOpenCallModal,
   onOpenAssistantTab
 }) => {
@@ -44,18 +43,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
         </a>
 
-        {/* Lado direito do topo: Botão Dourado + Botão Hambúrguer móvel com folga lateral e microinteração deslizante */}
-        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 pr-1 sm:pr-0">
-          <button
-            onClick={onOpenDemoModal}
-            className="group relative inline-flex items-center gap-1 sm:gap-2.5 px-2 py-1.5 sm:px-6 sm:py-3 rounded-md sm:rounded-xl text-[10px] sm:text-sm font-bold text-black bg-gradient-to-r from-[#f3df89] via-[#d4af37] to-[#ba9324] hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_2px_10px_rgba(212,175,55,0.25)] sm:shadow-[0_2px_18px_rgba(212,175,55,0.35)] whitespace-nowrap cursor-pointer shrink-0"
-          >
-            <Sparkles className="w-2.5 h-2.5 sm:w-4 sm:h-4 text-black shrink-0" />
-            <span className="inline sm:hidden">Demonstração</span>
-            <span className="hidden sm:inline">Quero uma demonstração gratuita</span>
-            <ArrowUpRight className="w-2.5 h-2.5 sm:w-4 sm:h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
-          </button>
-
+        {/* Lado direito do topo: Botão Hambúrguer móvel com folga lateral e microinteração deslizante */}
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0 pr-1 sm:pr-0 md:hidden">
           {/* Gatilho do menu mobile em telas pequenas com folga e efeito de deslizamento para a esquerda ao aproximar o mouse ou toque */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

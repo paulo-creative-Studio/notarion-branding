@@ -19,11 +19,11 @@ export const DifferentialsSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <div className="text-xs font-semibold tracking-wider uppercase text-[#d4af37]">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <p className="font-pinyon font-normal text-2xl sm:text-[1.75rem] text-[#e6ca65] tracking-[0.02em] leading-none">
             Por que escolher a Notarion Brand
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+          </p>
+          <h2 className="font-marcellus font-normal text-3xl sm:text-4xl md:text-[42px] text-white tracking-[-0.015em] leading-[1.18]">
             Design e tecnologia construídos para a rotina de quem empreende
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base">
@@ -45,7 +45,7 @@ export const DifferentialsSection: React.FC = () => {
                   {getIcon(idx)}
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-white">
+                <h3 className="font-marcellus font-normal text-lg sm:text-xl text-white">
                   {diff.title}
                 </h3>
 
@@ -68,11 +68,11 @@ export const DifferentialsSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10">
             {/* Coluna Esquerda: Por que empresas escolhem a Notarion */}
             <div className="lg:col-span-5 p-6 sm:p-8 rounded-2xl bg-zinc-950/90 border border-zinc-800 shadow-2xl space-y-5">
-              <div className="space-y-1">
-                <span className="text-[11px] font-semibold text-[#d4af37] tracking-wider uppercase block">
+              <div className="space-y-1.5">
+                <span className="font-pinyon font-normal text-2xl text-[#e6ca65] tracking-[0.02em] leading-none block">
                   Vantagens Reais
                 </span>
-                <h4 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
+                <h4 className="font-marcellus font-normal text-2xl text-white tracking-[-0.015em]">
                   Por que empresas escolhem a Notarion?
                 </h4>
               </div>
@@ -112,10 +112,10 @@ export const DifferentialsSection: React.FC = () => {
             {/* Coluna Direita: O que você recebe & Resultado */}
             <div className="lg:col-span-7 space-y-6">
               <div className="space-y-2">
-                <div className="text-xs font-semibold text-[#d4af37] tracking-wider uppercase">
-                  POR QUE ESCOLHER A NOTARION?
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-snug">
+                <p className="font-pinyon font-normal text-2xl text-[#e6ca65] tracking-[0.02em] leading-none">
+                  Por que escolher a Notarion?
+                </p>
+                <h3 className="font-marcellus font-normal text-2xl sm:text-3xl text-white tracking-[-0.015em] leading-snug">
                   Soluções digitais criadas para gerar resultado no mundo real.
                 </h3>
               </div>

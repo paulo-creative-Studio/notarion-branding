@@ -45,7 +45,7 @@ export const PackageModal: React.FC<PackageModalProps> = ({ pkg, onClose, onOpen
           <span className="text-xs font-semibold text-[#d4af37] uppercase tracking-wider">
             Detalhamento do Pacote
           </span>
-          <h3 className="text-2xl font-bold text-white">
+          <h3 className="font-marcellus font-normal text-2xl text-white">
             {pkg.title}
           </h3>
           <p className="text-xs text-zinc-400">

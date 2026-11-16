@@ -259,89 +259,61 @@ export const SEGMENTS_DATA: Record<string, Segment> = {
 
 export const PACKAGES_DATA: PackageTier[] = [
   {
-    id: "demo",
-    title: "Demonstração Gratuita",
-    subtitle: "Veja como a presença digital da sua empresa pode ficar antes de contratar",
-    priceTag: "Sem Custo Inicial",
-    priceNote: "Prévia visual exclusiva preparada para a sua empresa",
-    popular: false,
-    introText: "Conheça uma proposta visual preparada para o seu negócio e veja, na prática, como seus clientes poderiam encontrar informações, produtos, serviços e formas de contato em um único lugar.",
-    noCommitmentNotice: "A demonstração é gratuita e não exige compromisso de contratação.",
-    featuresTitle: "O que você recebe",
-    features: [
-      "Prévia visual personalizada — uma demonstração adaptada ao perfil da sua empresa.",
-      "Análise da presença digital atual — identificamos oportunidades de melhoria na forma como seu negócio se apresenta online.",
-      "Visualização em celular e computador — veja como a solução funciona nos principais dispositivos.",
-      "Sem compromisso — você conhece a proposta antes de decidir.",
-      "Atendimento direto com a Notarion Brand — tire suas dúvidas e converse sobre as possibilidades para sua empresa."
-    ],
-    closingQuestion: "Quer ver como sua empresa poderia ficar?",
-    ctaText: "Quero Ver Meu Negócio",
-    ctaType: "demo"
-  },
-  {
     id: "presenca",
     title: "Presença Digital",
-    subtitle: "Para empresas que querem uma presença profissional e fácil de encontrar na internet.",
-    priceTag: "R$ 497,00",
-    priceNote: "Pagamento único • Implantação completa",
-    popular: true,
+    subtitle: "Uma apresentação profissional para empresas que precisam ser encontradas e contatadas com facilidade.",
+    priceTag: "R$ 497",
+    priceNote: "Valor atual do site · pagamento único",
+    popular: false,
     featuresTitle: "O que está incluído:",
     features: [
-      "Site profissional e responsivo para celulares, tablets e computadores",
-      "Apresentação da empresa, serviços e informações principais",
-      "Botão de WhatsApp para contato direto",
-      "Integração com o Instagram oficial",
-      "Localização da empresa e botão “Como chegar”",
-      "Horários de atendimento e canais de contato",
-      "SEO local básico para melhorar a presença nas buscas"
+      "Site responsivo com apresentação da empresa",
+      "Serviços, horários e informações essenciais",
+      "WhatsApp, Instagram e localização",
+      "SEO local básico",
+      "Publicação inicial"
     ],
-    ctaText: "Conhecer a solução",
+    ctaText: "Solicitar proposta",
     ctaType: "consult",
-    disclaimer: "Manutenção e alterações após a entrega são contratadas separadamente."
+    disclaimer: "Domínio, manutenção, integrações pagas e serviços de terceiros são avaliados separadamente."
   },
   {
     id: "negocio",
     title: "Negócio Digital",
-    subtitle: "Transforme seu site em uma ferramenta ativa de vendas, apresentação e consulta diária.",
+    subtitle: "Uma vitrine organizada para produtos, serviços, cardápios, portfólios e campanhas.",
     priceTag: "R$ 797",
-    priceNote: "Pagamento único • Implantação completa",
-    popular: false,
-    introText: "Para empresas que precisam apresentar produtos, serviços, cardápios, portfólios, promoções ou informações de forma organizada e acessível aos clientes.",
+    priceNote: "Valor atual do site · pagamento único",
+    popular: true,
     featuresTitle: "O que está incluído:",
     features: [
-      "Tudo incluído no plano Presença Digital",
-      "Cardápio digital, catálogo de produtos ou portfólio completo",
-      "Vitrine digital para apresentação de produtos e serviços",
-      "Organização por categorias, fotos, descrições e preços",
-      "Seção para eventos, promoções e campanhas sazonais",
-      "QR Codes para acesso rápido ao cardápio, catálogo ou página do negócio",
-      "Fluxo de pedidos e solicitações direcionado para o WhatsApp"
+      "Todos os recursos de Presença Digital",
+      "Catálogo, cardápio ou portfólio",
+      "Categorias, imagens, descrições e preços",
+      "Campanhas e promoções conforme escopo",
+      "QR Code e solicitações via WhatsApp"
     ],
-    ctaText: "Conhecer detalhes",
+    ctaText: "Conhecer a solução",
     ctaType: "consult",
-    disclaimer: "Recursos e estrutura podem ser adaptados ao tipo de negócio."
+    disclaimer: "O escopo definitivo, prazos e condições constam da proposta comercial."
   },
   {
     id: "automacao",
-    title: "Automação",
-    subtitle: "Para empresas que querem reduzir tarefas manuais e organizar melhor o atendimento.",
+    title: "Automação & Atendimento",
+    subtitle: "Fluxos digitais para organizar contatos, reduzir tarefas repetitivas e apoiar o atendimento.",
     priceTag: "A partir de R$ 1.497",
-    priceNote: "Implantação • Projeto personalizado",
+    priceNote: "Implantação · escopo personalizado",
     popular: false,
-    introText: "Automatize etapas do atendimento, captação e organização de contatos para reduzir tarefas repetitivas e tornar o processo comercial mais eficiente.",
     featuresTitle: "O que está incluído:",
     features: [
-      "Triagem inteligente de mensagens no WhatsApp",
-      "Formulários inteligentes para captação e qualificação de leads",
-      "Agendamento automatizado de serviços, atendimentos ou visitas",
-      "Respostas automáticas para dúvidas frequentes (FAQ)",
-      "Organização e direcionamento de mensagens para os atendentes responsáveis",
-      "Integrações com ferramentas e sistemas utilizados pela empresa, conforme viabilidade"
+      "Triagem e qualificação de contatos",
+      "Formulários e respostas automatizadas",
+      "Encaminhamento para atendimento humano",
+      "Agendamentos conforme viabilidade",
+      "Integrações definidas em proposta"
     ],
-    ctaText: "Conhecer detalhes",
+    ctaText: "Discutir meu projeto",
     ctaType: "consult",
-    disclaimer: "Projetos de automação são definidos de acordo com as necessidades e o fluxo de atendimento de cada empresa. Funcionalidades ou integrações adicionais podem ser orçadas separadamente."
+    disclaimer: "Integrações pagas, domínio e serviços de terceiros são avaliados separadamente em proposta comercial."
   }
 ];
 

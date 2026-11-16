@@ -50,12 +50,12 @@ export const ConversionCtaSection: React.FC<ConversionCtaSectionProps> = ({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Text & Value */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="text-xs font-semibold tracking-wider uppercase text-[#d4af37]">
+          <div className="lg:col-span-6 space-y-5">
+            <p className="font-pinyon font-normal text-2xl sm:text-[1.75rem] text-[#e6ca65] tracking-[0.02em] leading-none">
               Demonstração Sem Custo
-            </div>
+            </p>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">
+            <h2 className="font-marcellus font-normal text-3xl sm:text-4xl md:text-[46px] text-white tracking-[-0.015em] leading-[1.16]">
               Quer descobrir como sua empresa poderia ficar?
             </h2>
 
@@ -227,7 +227,7 @@ export const ConversionCtaSection: React.FC<ConversionCtaSectionProps> = ({
                   <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 mx-auto flex items-center justify-center">
                     <Check className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="font-marcellus font-normal text-xl text-white">
                     Solicitação Recebida com Sucesso!
                   </h3>
                   <p className="text-xs text-zinc-300 max-w-sm mx-auto leading-relaxed">

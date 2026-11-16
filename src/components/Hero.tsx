@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { ArrowRight, Sparkles, MapPin, MessageSquare, Clock, Star, PhoneCall, Check } from 'lucide-react';
+import React from 'react';
+import { ArrowRight, Sparkles, PhoneCall, Check } from 'lucide-react';
 import { NotarionBrandIcon } from './NotarionLogo';
+import { HeroVideoPlayer } from './HeroVideoPlayer';
 
 interface HeroProps {
   onOpenDemoModal: () => void;
@@ -8,7 +9,6 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal, onOpenCallModal }) => {
-  const [activePreviewTab, setActivePreviewTab] = useState<'gastronomia' | 'moda' | 'servicos'>('gastronomia');
 
   return (
     <section className="relative pt-12 pb-20 md:pt-16 md:pb-28 overflow-hidden">
@@ -38,12 +38,23 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal, onOpenCallModal }) 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           <div className="lg:col-span-6 space-y-6">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-white tracking-tight leading-[1.12] text-balance">
-              Seu negócio merece uma <span className="gold-gradient-text">presença digital</span> à altura da sua marca.
+            {/* Detalhe ornamental discreto em Pinyon Script */}
+            <div className="flex items-center gap-3">
+              <span className="h-px w-8 bg-gradient-to-r from-[#d4af37] to-transparent" aria-hidden="true" />
+              <span className="font-pinyon text-xl sm:text-2xl text-[#d4af37]/90 tracking-wide leading-none select-none">
+                Estética &amp; Valor
+              </span>
+            </div>
+
+            <h1 className="font-marcellus font-normal text-center text-[1.85rem] sm:text-[2.35rem] md:text-[2.6rem] lg:text-[2.65rem] xl:text-[2.85rem] text-white tracking-[0.005em] leading-[1.18] text-balance">
+              Marcas memoráveis começam com uma{' '}
+              <span className="bg-gradient-to-r from-[#f3df89] via-[#e6ca65] to-[#d4af37] bg-clip-text text-transparent">
+                presença extraordinária.
+              </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-xl font-normal">
-              Criamos sites, vitrines digitais, cardápios, soluções para Google, WhatsApp e automações para negócios locais que querem ser encontrados, transmitir profissionalismo e facilitar o contato com seus clientes.
+            <p className="font-italiana text-[1.25rem] sm:text-[1.4rem] text-zinc-100/90 leading-[1.48] tracking-[0.02em] max-w-xl">
+              Identidade, design e experiências digitais desenvolvidas para valorizar o seu negócio.
             </p>
 
             {/* CTAs */}
@@ -95,129 +106,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal, onOpenCallModal }) 
             </div>
           </div>
 
-          {/* Right Column: Multi-device visual presentation */}
+          {/* Right Column: Clean 16:9 Dynamic Video Playlist Area */}
           <div className="lg:col-span-6">
-            <div className="relative">
-              
-              {/* Device Frame Container */}
-              <div className="relative rounded-2xl bg-gradient-to-b from-zinc-800/60 to-zinc-900/90 p-2 sm:p-3 border border-zinc-700/60 shadow-2xl">
-                
-                {/* Visual Header with Real Image */}
-                <div className="relative aspect-[16/9] w-full rounded-xl overflow-hidden bg-zinc-950 border border-zinc-800">
-                  <img
-                    src="/src/assets/images/hero_digital_presence_mockup_1790452613859.jpg"
-                    alt="Demonstração da experiência digital Notarion Brand em smartphone e desktop"
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
-
-                  {/* Top Bar inside mockup */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between text-xs text-zinc-300 pointer-events-none">
-                    <span className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded text-[11px] font-mono tracking-tight text-white border border-white/10">
-                      notarion.com.br/empresa
-                    </span>
-                    <span className="bg-[#d4af37]/20 border border-[#d4af37]/50 text-[#f3df89] text-[11px] px-2 py-0.5 rounded font-semibold">
-                      Ao Vivo
-                    </span>
-                  </div>
-
-                  {/* Overlaid business quick card inside preview */}
-                  <div className="absolute bottom-3 left-3 right-3 bg-zinc-900/90 backdrop-blur-md border border-zinc-700/80 rounded-lg p-3 text-white">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <h4 className="text-sm font-bold tracking-tight text-white">
-                            {activePreviewTab === 'gastronomia' && 'Osteria & Bar San Paolo'}
-                            {activePreviewTab === 'moda' && 'Lumière Moda & Confecção'}
-                            {activePreviewTab === 'servicos' && 'TechAuto Mecânica & Diagnóstico'}
-                          </h4>
-                          <span className="flex items-center text-[10px] text-amber-400 font-semibold">
-                            <Star className="w-3 h-3 fill-amber-400 inline mr-0.5" /> 4.9 (Google)
-                          </span>
-                        </div>
-                        <p className="text-[11px] text-zinc-300 flex items-center gap-1.5 mt-0.5">
-                          <MapPin className="w-3 h-3 text-[#d4af37]" />
-                          <span>Rua dos Pinheiros, 450 · Centro</span>
-                          <span className="text-emerald-400 font-medium">· Aberto agora</span>
-                        </p>
-                      </div>
-
-                      <div className="flex items-center gap-2">
-                        <span className="hidden sm:inline-flex text-[11px] text-zinc-300 bg-zinc-800 px-2.5 py-1 rounded border border-zinc-700">
-                          Rotas Waze / Maps
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-black bg-[#d4af37] px-2.5 py-1 rounded">
-                          <MessageSquare className="w-3 h-3" /> Pedir WhatsApp
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Interactive Scenario Switcher underneath */}
-                <div className="mt-3 pt-2 border-t border-zinc-800/80">
-                  <div className="flex items-center justify-between text-xs text-zinc-400 mb-2 px-1">
-                    <span className="font-semibold text-zinc-300">Simule seu tipo de negócio:</span>
-                    <span className="text-[11px] text-zinc-400">Clique para alternar o exemplo</span>
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-2">
-                    <button
-                      onClick={() => setActivePreviewTab('gastronomia')}
-                      className={`px-3 py-2 rounded-lg text-xs font-medium text-left transition-all ${
-                        activePreviewTab === 'gastronomia'
-                          ? 'bg-zinc-800 text-[#f3df89] border border-[#d4af37]/40 shadow-sm'
-                          : 'bg-zinc-900/60 text-zinc-400 border border-zinc-800 hover:text-white'
-                      }`}
-                    >
-                      <span className="block font-bold">1. Gastronomia</span>
-                      <span className="text-[10px] text-zinc-300">Cardápio & QR Code</span>
-                    </button>
-
-                    <button
-                      onClick={() => setActivePreviewTab('moda')}
-                      className={`px-3 py-2 rounded-lg text-xs font-medium text-left transition-all ${
-                        activePreviewTab === 'moda'
-                          ? 'bg-zinc-800 text-[#f3df89] border border-[#d4af37]/40 shadow-sm'
-                          : 'bg-zinc-900/60 text-zinc-400 border border-zinc-800 hover:text-white'
-                      }`}
-                    >
-                      <span className="block font-bold">2. Lojas & Roupas</span>
-                      <span className="text-[10px] text-zinc-300">Modelos Virtuais</span>
-                    </button>
-
-                    <button
-                      onClick={() => setActivePreviewTab('servicos')}
-                      className={`px-3 py-2 rounded-lg text-xs font-medium text-left transition-all ${
-                        activePreviewTab === 'servicos'
-                          ? 'bg-zinc-800 text-[#f3df89] border border-[#d4af37]/40 shadow-sm'
-                          : 'bg-zinc-900/60 text-zinc-400 border border-zinc-800 hover:text-white'
-                      }`}
-                    >
-                      <span className="block font-bold">3. Especialistas</span>
-                      <span className="text-[10px] text-zinc-300">Portfólio & Orçamento</span>
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Float badge indicator */}
-              <div className="mt-3 flex items-center justify-between px-2 text-xs text-zinc-400">
-                <span className="flex items-center gap-1.5 text-zinc-300">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  Pronto para uso em celulares e computadores
-                </span>
-                <button
-                  onClick={onOpenDemoModal}
-                  className="text-zinc-300 hover:text-[#d4af37] underline underline-offset-2 transition-colors font-medium"
-                >
-                  Solicitar prévia da minha empresa &rarr;
-                </button>
-              </div>
-
-            </div>
+            <HeroVideoPlayer />
           </div>
 
         </div>

@@ -15,11 +15,11 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenDemoMo
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
-          <div className="text-xs font-semibold tracking-wider uppercase text-[#d4af37]">
-            Portfólio & Demonstrações
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-14">
+          <p className="font-pinyon font-normal text-2xl sm:text-[1.75rem] text-[#e6ca65] tracking-[0.02em] leading-none">
+            Portfólio &amp; Demonstrações
+          </p>
+          <h2 className="font-marcellus font-normal text-3xl sm:text-4xl md:text-[42px] text-white tracking-[-0.015em] leading-[1.18]">
             Projetos que transformam ideias em experiências digitais
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base">
@@ -54,7 +54,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenDemoMo
                     <span className="text-[11px] font-semibold text-[#f3df89] block">
                       {project.segment}
                     </span>
-                    <h3 className="text-lg font-bold text-white leading-tight">
+                    <h3 className="font-marcellus font-normal text-xl text-white leading-tight">
                       {project.title}
                     </h3>
                   </div>
@@ -123,7 +123,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenDemoMo
               <span className="text-xs font-semibold text-[#d4af37] uppercase tracking-wider">
                 {selectedProject.segment} · Projeto Demonstrativo
               </span>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="font-marcellus font-normal text-xl text-white">
                 {selectedProject.title}
               </h3>
             </div>
@@ -139,7 +139,7 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenDemoMo
 
             {selectedProject.headline ? (
               <div className="space-y-3">
-                <h4 className="text-base sm:text-lg font-bold text-white leading-snug">
+                <h4 className="font-marcellus font-normal text-base sm:text-lg text-white leading-snug">
                   {selectedProject.headline}
                 </h4>
                 {selectedProject.bodyParagraphs?.map((p, idx) => (

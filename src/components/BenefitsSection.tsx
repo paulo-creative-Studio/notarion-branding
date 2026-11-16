@@ -11,11 +11,11 @@ export const BenefitsSection: React.FC<BenefitsSectionProps> = ({ onOpenDemoModa
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
-          <div className="text-xs font-semibold tracking-wider uppercase text-[#d4af37]">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-14">
+          <p className="font-pinyon font-normal text-2xl sm:text-[1.75rem] text-[#e6ca65] tracking-[0.02em] leading-none">
             Módulo Adicional Opcional
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+          </p>
+          <h2 className="font-marcellus font-normal text-3xl sm:text-4xl md:text-[42px] text-white tracking-[-0.015em] leading-[1.18]">
             Clube de Benefícios & Fidelização Local
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base">
@@ -30,7 +30,7 @@ export const BenefitsSection: React.FC<BenefitsSectionProps> = ({ onOpenDemoModa
             <div className="w-10 h-10 rounded-xl bg-zinc-800/80 flex items-center justify-center text-[#d4af37]">
               <Ticket className="w-5 h-5" />
             </div>
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="font-marcellus font-normal text-xl text-white">
               Cupons & Promoções Exclusivas
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
@@ -42,7 +42,7 @@ export const BenefitsSection: React.FC<BenefitsSectionProps> = ({ onOpenDemoModa
             <div className="w-10 h-10 rounded-xl bg-zinc-800/80 flex items-center justify-center text-[#d4af37]">
               <Users className="w-5 h-5" />
             </div>
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="font-marcellus font-normal text-xl text-white">
               Cadastro Próprio de Clientes
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">
@@ -54,7 +54,7 @@ export const BenefitsSection: React.FC<BenefitsSectionProps> = ({ onOpenDemoModa
             <div className="w-10 h-10 rounded-xl bg-zinc-800/80 flex items-center justify-center text-[#d4af37]">
               <Flame className="w-5 h-5" />
             </div>
-            <h3 className="text-lg font-bold text-white">
+            <h3 className="font-marcellus font-normal text-xl text-white">
               Campanhas de Reativação
             </h3>
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed">

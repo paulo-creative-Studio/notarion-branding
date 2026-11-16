@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NOTARION — Bloco de problemas</title>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ==== COPIE DAQUI: variáveis (use as mesmas do protótipo de pacotes) ==== */
+:root{--bg:#0b0b0d;--ink:#f0e9dd;--muted:#a6a29c;--gold:#c7a568;--line:#39332c}
+
+/* ==== COPIE DAQUI: estilo do bloco ==== */
+.dores{max-width:1100px;margin:0 auto;padding:0 25px}
+.dores .eyebrow{color:var(--gold);letter-spacing:.26em;text-transform:uppercase;font-size:10px;font-weight:700;margin:0 0 34px}
+.dores-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 50px}
+
+/* Sem caixa e sem borda lateral: só uma linha fina no topo de cada item */
+.dor{position:relative;padding:24px 8px 30px 0;transition:transform .25s ease,background-color .25s ease}
+.dor::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--line)}
+/* linha dourada que "desenha" da esquerda para a direita no hover */
+.dor::after{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .45s ease}
+
+.dor .n{display:block;font-size:11px;letter-spacing:.16em;color:var(--gold);margin-bottom:14px;opacity:.85}
+.dor h3{font-family:Marcellus,serif;font-weight:400;font-size:23px;line-height:1.25;margin:0 0 10px;color:var(--ink);transition:color .25s ease}
+.dor p{margin:0;color:var(--muted);font-size:13px;line-height:1.75;max-width:46ch;transition:color .25s ease}
+
+.dor:hover{transform:translateY(-2px);background:linear-gradient(180deg,rgba(199,165,104,.07),transparent 70%)}
+.dor:hover::after{transform:scaleX(1)}
+.dor:hover h3{color:var(--gold)}
+.dor:hover p{color:#c9c4bb}
+
+.resultado{margin-top:10px;padding-top:26px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.8}
+.resultado strong{color:var(--gold);font-weight:600}
+
+@media(max-width:700px){.dores-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.dor,.dor::after,.dor h3,.dor p{transition:none}.dor:hover{transform:none}}
+
+/* ==== só para esta página de teste (não copie) ==== */
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,Arial,sans-serif;padding:70px 0}
+</style>
+</head>
+<body>
+
+<!-- ==== COPIE DAQUI: HTML do bloco ==== -->
+<section class="dores">
+  <p class="eyebrow">O que acontece hoje com a maioria dos negócios</p>
+  <div class="dores-grid">
+    <article class="dor"><span class="n">01 /</span><h3>Instagram desatualizado</h3><p>Fotos antigas, destaques confusos e o cliente não sabe se o local ainda está aberto ou quanto custam as coisas.</p></article>
+    <article class="dor"><span class="n">02 /</span><h3>Cardápio e catálogo inacessíveis</h3><p>PDFs pesados de 20 MB que demoram para abrir ou fotos de cardápio físico borradas no celular.</p></article>
+    <article class="dor"><span class="n">03 /</span><h3>Informações espalhadas</h3><p>Endereço em um lugar, horário errado no Google Maps e link quebrado na bio.</p></article>
+    <article class="dor"><span class="n">04 /</span><h3>Dependência de mensagens uma a uma</h3><p>Sua equipe gasta horas respondendo perguntas repetitivas como “qual o horário?” ou “qual o endereço?”.</p></article>
+    <article class="dor"><span class="n">05 /</span><h3>Ausência de site profissional</h3><p>Quem busca no Google encontra seu concorrente primeiro e transmite mais credibilidade que você.</p></article>
+    <article class="dor"><span class="n">06 /</span><h3>Apresentação amadora de produtos</h3><p>Fotos sem padrão que desvalorizam mercadorias de alta qualidade, como roupas e peças de vestuário.</p></article>
+  </div>
+  <p class="resultado"><strong>Resultado:</strong> clientes desistem da compra e escolhem a opção mais fácil no Google ou no bairro.</p>
+</section>
+
+</body>
+</html>

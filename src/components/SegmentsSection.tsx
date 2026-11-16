@@ -32,11 +32,11 @@ export const SegmentsSection: React.FC<SegmentsSectionProps> = ({ onOpenDemoModa
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-14">
-          <div className="text-xs font-semibold tracking-wider uppercase text-[#d4af37]">
+        <div className="max-w-3xl mx-auto text-center space-y-3 mb-14">
+          <p className="font-pinyon font-normal text-2xl sm:text-[1.75rem] text-[#e6ca65] tracking-[0.02em] leading-none">
             Especialização por Nicho
-          </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white tracking-tight">
+          </p>
+          <h2 className="font-marcellus font-normal text-3xl sm:text-4xl md:text-[42px] text-white tracking-[-0.015em] leading-[1.18]">
             Uma solução para cada tipo de negócio
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base">
@@ -77,7 +77,7 @@ export const SegmentsSection: React.FC<SegmentsSectionProps> = ({ onOpenDemoModa
                 <span className="text-xs font-semibold text-[#d4af37] tracking-wider uppercase">
                   {segment.badge}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+                <h3 className="font-marcellus font-normal text-2xl sm:text-3xl text-white leading-tight">
                   {segment.tagline}
                 </h3>
                 <p className="text-sm text-zinc-300 leading-relaxed pt-1">
@@ -145,7 +145,7 @@ export const SegmentsSection: React.FC<SegmentsSectionProps> = ({ onOpenDemoModa
                       <span className="text-[10px] uppercase font-mono tracking-wider text-[#f3df89] block mb-1">
                         {segment.badge}
                       </span>
-                      <h4 className="text-base font-bold text-white">
+                      <h4 className="font-marcellus font-normal text-base text-white">
                         {segment.mockupTitle}
                       </h4>
                       <p className="text-xs text-zinc-300">
@@ -157,7 +157,7 @@ export const SegmentsSection: React.FC<SegmentsSectionProps> = ({ onOpenDemoModa
                   <div className="p-8 aspect-[4/3] flex flex-col justify-between bg-gradient-to-br from-zinc-900 to-zinc-950">
                     <div className="space-y-2">
                       <span className="text-xs font-semibold text-[#d4af37]">Projeto Sob Medida</span>
-                      <h4 className="text-xl font-bold text-white">{segment.mockupTitle}</h4>
+                      <h4 className="font-marcellus font-normal text-xl text-white">{segment.mockupTitle}</h4>
                       <p className="text-xs text-zinc-400">{segment.mockupSubtitle}</p>
                     </div>
 

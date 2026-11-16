@@ -15,12 +15,14 @@ export const MaintenanceSection: React.FC<MaintenanceSectionProps> = ({ onOpenCa
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             <div className="lg:col-span-7 space-y-5">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#d4af37]">
-                <RefreshCw className="w-4 h-4 text-[#d4af37]" />
-                <span>Gestão da Presença Digital</span>
+              <div className="flex items-center gap-2.5 text-[#e6ca65]">
+                <RefreshCw className="w-4 h-4 text-[#d4af37] shrink-0" />
+                <span className="font-pinyon font-normal text-2xl sm:text-[1.75rem] tracking-[0.02em] leading-none">
+                  Gestão da Presença Digital
+                </span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <h2 className="font-marcellus font-normal text-2xl sm:text-3xl md:text-[34px] text-white tracking-[-0.015em] leading-[1.24]">
                 Seu projeto pronto como produto único. Ou com gestão contínua opcional.
               </h2>
 
