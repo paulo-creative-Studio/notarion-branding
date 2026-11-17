@@ -1,4 +1,16 @@
 import React from 'react';
+import { 
+  Globe, 
+  UtensilsCrossed, 
+  Sparkles, 
+  Briefcase, 
+  MapPin, 
+  CalendarDays, 
+  MessageSquare, 
+  Cpu,
+  ArrowRight,
+  Check
+} from 'lucide-react';
 import { SOLUTIONS_LIST } from '../data/content';
 
 interface ServicesSectionProps {
@@ -6,144 +18,116 @@ interface ServicesSectionProps {
   onOpenCallModal: () => void;
 }
 
-const ROMAN_NUMERALS = ['I.', 'II.', 'III.', 'IV.', 'V.', 'VI.', 'VII.', 'VIII.'];
+export const ServicesSection: React.FC<ServicesSectionProps> = ({ onOpenDemoModal, onOpenCallModal }) => {
+  const getIcon = (id: string) => {
+    switch (id) {
+      case 'presenca-digital': return <Globe className="w-5 h-5 text-[#d4af37]" />;
+      case 'vitrine-digital': return <Sparkles className="w-5 h-5 text-[#d4af37]" />;
+      case 'cardapio-catalogo': return <UtensilsCrossed className="w-5 h-5 text-[#d4af37]" />;
+      case 'portfolio-servicos': return <Briefcase className="w-5 h-5 text-[#d4af37]" />;
+      case 'google-maps': return <MapPin className="w-5 h-5 text-[#d4af37]" />;
+      case 'eventos-promocoes': return <CalendarDays className="w-5 h-5 text-[#d4af37]" />;
+      case 'whatsapp-integrado': return <MessageSquare className="w-5 h-5 text-[#d4af37]" />;
+      case 'automacoes-digitais': return <Cpu className="w-5 h-5 text-[#d4af37]" />;
+      default: return <Globe className="w-5 h-5 text-[#d4af37]" />;
+    }
+  };
 
-const handleCursorMove = (e: React.MouseEvent<HTMLElement>) => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  e.currentTarget.style.setProperty('--mx', `${x}px`);
-  e.currentTarget.style.setProperty('--my', `${y}px`);
-};
-
-export const ServicesSection: React.FC<ServicesSectionProps> = ({
-  onOpenDemoModal,
-  onOpenCallModal,
-}) => {
   return (
-    <section id="solucoes" className="py-20 md:py-28 bg-[#090a0c] relative scroll-mt-24">
-      <div className="max-w-[1190px] mx-auto px-6 sm:px-8">
-
+    <section id="solucoes" className="py-20 md:py-28 bg-[#090a0c] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl space-y-3">
             <p className="font-pinyon font-normal text-2xl sm:text-[1.75rem] text-[#e6ca65] tracking-[0.02em] leading-none">
               Soluções Práticas
             </p>
-            <h2 className="font-marcellus font-normal text-3xl sm:text-4xl md:text-[42px] text-[#f4f1ea] tracking-[-0.015em] leading-[1.18] text-balance">
+            <h2 className="font-marcellus font-normal text-3xl sm:text-4xl md:text-[42px] text-white tracking-[-0.015em] leading-[1.18] text-balance">
               O que a Notarion desenvolve para o seu negócio
             </h2>
-            <p className="text-zinc-400 text-sm sm:text-[15px] leading-[1.8]">
+            <p className="text-zinc-400 text-sm sm:text-base">
               Ferramentas objetivas que eliminam atritos entre o seu cliente e a compra. Tudo integrado ao celular e fácil de manter.
             </p>
           </div>
 
           <div className="shrink-0">
             <button
-              type="button"
               onClick={() => onOpenDemoModal()}
-              className="w-full sm:w-auto px-6 py-3.5 border border-[#d4af37]/70 bg-transparent text-[#e6ca65] hover:bg-[#d4af37]/10 hover:border-[#f3df89] text-[11px] uppercase tracking-[0.12em] font-bold transition-colors duration-200 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f3df89]"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold text-zinc-200 bg-zinc-900 border border-zinc-700 hover:border-[#d4af37] hover:text-[#f3df89] transition-all"
             >
-              Solicitar demonstração completa
+              <span>Solicitar demonstração completa</span>
+              <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>
         </div>
 
-        {/* Grid of 8 Practical Solutions matching Packages editorial cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
-          {SOLUTIONS_LIST.map((sol, idx) => {
-            const isFeatured = sol.id === 'vitrine-digital';
-            const roman = ROMAN_NUMERALS[idx] ?? `${idx + 1}.`;
-
-            return (
-              <article
-                key={sol.id}
-                onMouseMove={handleCursorMove}
-                className={`notarion-plan flex flex-col justify-between p-7 sm:p-8 ${
-                  isFeatured ? 'notarion-plan-featured lg:col-span-2' : ''
-                }`}
-              >
-                <div className="notarion-plan-spotlight" aria-hidden="true" />
-
-                {isFeatured && sol.badgeText && (
-                  <div className="absolute right-0 top-0 bg-[#d4af37] text-[#090a0c] text-[9px] tracking-[0.14em] font-bold px-3.5 py-2 uppercase">
-                    {sol.badgeText}
+        {/* Grid of 8 Practical Solutions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {SOLUTIONS_LIST.map((sol) => (
+            <div
+              key={sol.id}
+              className={`rounded-2xl p-6 bg-zinc-900/40 border border-zinc-800/80 hover:border-[#d4af37]/40 transition-all duration-200 flex flex-col justify-between group ${
+                sol.id === 'vitrine-digital' ? 'md:col-span-2 bg-gradient-to-br from-zinc-900/90 via-zinc-900/50 to-zinc-950 border-[#d4af37]/30' : ''
+              }`}
+            >
+              <div className="space-y-4">
+                
+                {/* Header of card */}
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/60 flex items-center justify-center">
+                    {getIcon(sol.id)}
                   </div>
-                )}
+                  
+                  {/* Clean unboxed category label */}
+                  <span className="text-xs font-medium text-zinc-400">
+                    {sol.category}
+                  </span>
+                </div>
 
-                <div className="relative z-10 flex flex-col flex-1">
-                  {/* Numeral & Unboxed Category */}
-                  <div
-                    className={`flex items-baseline gap-3 ${
-                      isFeatured ? 'justify-start pt-4 sm:pt-0' : 'justify-between'
-                    }`}
-                  >
-                    <span className="font-[family-name:var(--font-italiana)] text-[28px] leading-none text-[#d4af37]">
-                      {roman}
-                    </span>
-                    <span className="text-[10px] font-bold tracking-[0.22em] uppercase text-[#d4af37]/85">
-                      {sol.category}
-                    </span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="font-marcellus font-normal text-[22px] sm:text-[24px] leading-[1.22] text-[#f4f1ea] mt-4 mb-2.5">
+                {/* Title & Badge */}
+                <div>
+                  <h3 className="font-marcellus font-normal text-xl text-white group-hover:text-[#f3df89] transition-colors leading-snug">
                     {sol.title}
                   </h3>
-
-                  {/* Description */}
-                  <p className="text-[13px] leading-[1.75] text-zinc-400">
-                    {sol.description}
-                  </p>
-
-                  {/* Deliverables List */}
-                  <ul
-                    className={`mt-6 pt-5 mb-6 border-t border-[#d4af37]/16 flex-1 ${
-                      isFeatured
-                        ? 'grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-3 content-start'
-                        : 'space-y-3'
-                    }`}
-                  >
-                    {sol.deliverables.map((item, i) => (
-                      <li
-                        key={i}
-                        className="text-[12.5px] leading-[1.65] text-zinc-200 flex items-start gap-2.5"
-                      >
-                        <span className="text-[#d4af37] shrink-0" aria-hidden="true">
-                          ↗
-                        </span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  {sol.badgeText && (
+                    <span className="text-[11px] font-semibold text-[#d4af37] block mt-1">
+                      {sol.badgeText}
+                    </span>
+                  )}
                 </div>
 
-                {/* Ideal For + CTA Button */}
-                <div className="relative z-10 space-y-4">
-                  <p className="text-[11px] leading-[1.6] text-zinc-400 border-t border-[#d4af37]/12 pt-4">
-                    <span className="text-[#d4af37]/90 font-semibold">Ideal:</span>{' '}
-                    {sol.idealFor}
-                  </p>
+                <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                  {sol.description}
+                </p>
 
-                  <button
-                    type="button"
-                    onClick={() =>
-                      sol.id === 'automacoes-digitais'
-                        ? onOpenCallModal()
-                        : onOpenDemoModal(sol.id)
-                    }
-                    className={`w-full py-3.5 px-4 text-center text-[11px] uppercase tracking-[0.12em] font-bold transition-colors duration-200 whitespace-nowrap focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f3df89] ${
-                      isFeatured
-                        ? 'bg-[#d4af37] text-[#090a0c] border border-[#d4af37] hover:bg-[#e6ca65]'
-                        : 'bg-transparent text-[#e6ca65] border border-[#d4af37]/70 hover:bg-[#d4af37]/10 hover:border-[#f3df89]'
-                    }`}
-                  >
-                    {sol.id === 'automacoes-digitais' ? 'Solicitar diagnóstico' : 'Ver prévia da solução'}
-                  </button>
+                {/* Deliverables List */}
+                <div className="pt-2 space-y-2">
+                  {sol.deliverables.map((item, i) => (
+                    <div key={i} className="flex items-start gap-2 text-xs text-zinc-400">
+                      <Check className="w-3.5 h-3.5 text-[#d4af37] shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
                 </div>
-              </article>
-            );
-          })}
+              </div>
+
+              {/* Card Footer / CTA */}
+              <div className="pt-6 mt-6 border-t border-zinc-800/60 flex items-center justify-between">
+                <span className="text-[11px] text-zinc-400 line-clamp-1 max-w-[180px]">
+                  Ideal: {sol.idealFor.split('.')[0]}
+                </span>
+                <button
+                  onClick={() => sol.id === 'automacoes-digitais' ? onOpenCallModal() : onOpenDemoModal(sol.id)}
+                  className="text-xs font-semibold text-[#d4af37] group-hover:translate-x-1 transition-transform inline-flex items-center gap-1"
+                >
+                  <span>Ver prévia</span>
+                  <ArrowRight className="w-3 h-3" />
+                </button>
+              </div>
+
+            </div>
+          ))}
         </div>
 
       </div>
