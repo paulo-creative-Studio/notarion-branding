@@ -228,6 +228,92 @@
   }
 }
 
+/* Portfolio editorial showcase cards & subtle hover */
+.notarion-portfolio-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.notarion-portfolio-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #d4af37 0%, #f3df89 65%, rgba(212, 175, 55, 0.25) 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.notarion-portfolio-spotlight {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    320px circle at var(--mx, 50%) var(--my, 0%),
+    rgba(212, 175, 55, 0.08),
+    rgba(212, 175, 55, 0.02) 48%,
+    transparent 74%
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.notarion-portfolio-img {
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+  .notarion-portfolio-card:hover {
+    border-color: rgba(212, 175, 55, 0.38);
+  }
+
+  .notarion-portfolio-card:hover::after {
+    transform: scaleX(1);
+  }
+
+  .notarion-portfolio-card:hover .notarion-portfolio-spotlight {
+    opacity: 1;
+  }
+
+  .notarion-portfolio-card:hover .notarion-portfolio-img {
+    transform: scale(1.03);
+  }
+}
+
+.notarion-showcase-media {
+  animation: notarionFadeSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes notarionFadeSlide {
+  from {
+    opacity: 0.4;
+    transform: scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notarion-portfolio-card::after,
+  .notarion-portfolio-spotlight,
+  .notarion-portfolio-img {
+    transition: none;
+  }
+  .notarion-portfolio-card:hover .notarion-portfolio-img {
+    transform: none;
+  }
+  .notarion-showcase-media {
+    animation: none;
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

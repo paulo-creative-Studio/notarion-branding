@@ -1,4 +1,7 @@
 import { Segment, SolutionItem, PackageTier, DemoProject } from '../types';
+import gastronomyMenuImg from '../assets/images/gastronomy_digital_menu_1790452639477.jpg';
+import vitrineFashionImg from '../assets/images/vitrine_virtual_fashion_1790452627657.jpg';
+import localServicesImg from '../assets/images/local_business_services_1790452653070.jpg';
 
 export const COMPANY_INFO = {
   name: "NOTARION BRAND",
@@ -179,7 +182,7 @@ export const SEGMENTS_DATA: Record<string, Segment> = {
     mockupTitle: "Bistrô & Bar Regional",
     mockupSubtitle: "Cardápio QR Code · Música ao Vivo · Reservas",
     highlightText: "Elimine custos de impressão de cardápios e dê água na boca antes mesmo do cliente sentar à mesa.",
-    exampleImage: "/src/assets/images/gastronomy_digital_menu_1790452639477.jpg",
+    exampleImage: gastronomyMenuImg,
     whatsappMessage: "Olá! Tenho um bar/restaurante e gostaria de ver uma demonstração de cardápio digital e presença no Google."
   },
   lojas: {
@@ -197,7 +200,7 @@ export const SEGMENTS_DATA: Record<string, Segment> = {
     mockupTitle: "Boutique & Confecção Urbana",
     mockupSubtitle: "Modelos Virtuais · Catálogo por Cores · Compra Direta",
     highlightText: "Mais agilidade para lançar novos produtos. Mais consistência visual. Menos custos de produção.",
-    exampleImage: "/src/assets/images/vitrine_virtual_fashion_1790452627657.jpg",
+    exampleImage: vitrineFashionImg,
     whatsappMessage: "Olá! Tenho uma loja/confecção e quero conhecer a solução de modelos virtuais e catálogo digital."
   },
   comercio: {
@@ -234,7 +237,7 @@ export const SEGMENTS_DATA: Record<string, Segment> = {
     mockupTitle: "Especialista em Instalações Técnicas",
     mockupSubtitle: "Portfólio de Obras · Avaliações · Orçamento Rápido",
     highlightText: "Quando você envia um link com seu portfólio profissional, o cliente percebe o valor antes mesmo de perguntar o preço.",
-    exampleImage: "/src/assets/images/local_business_services_1790452653070.jpg",
+    exampleImage: localServicesImg,
     whatsappMessage: "Olá! Sou profissional autônomo/técnico e quero um site com portfólio para fechar melhores orçamentos."
   },
   personalizado: {
@@ -322,18 +325,52 @@ export const DEMO_PROJECTS: DemoProject[] = [
     id: "demo-gastro",
     title: "Bistrô & Hambúrguer Artesanal",
     segment: "Bares & Gastronomia",
-    description: "Cardápio digital interativo com QR Code, agenda de chopp em dobro e botão para rotas diretas no GPS.",
-    image: "/src/assets/images/gastronomy_digital_menu_1790452639477.jpg",
+    description: "Cardápio digital interativo via QR Code, agenda da semana e botão de rotas diretas no GPS.",
+    editorialSummary: "Experiência digital pensada para bares, bistrôs e hamburguerias substituírem PDFs lentos por um cardápio ágil na mesa, com reservas e pedidos direcionados ao WhatsApp.",
+    headline: "Do QR Code na mesa ao pedido sem atrito no celular",
+    concept: "Unir apresentação gastronômica envolvente, consulta instantânea de pratos e bebidas, programação semanal e direcionamento direto para mapa ou reserva.",
+    image: gastronomyMenuImg,
+    imageAlt: "Cardápio digital interativo exibido em smartphone sobre mesa de bistrô com hambúrguer artesanal e chopp",
+    media: [
+      {
+        id: "gastro-cover",
+        type: "image",
+        src: gastronomyMenuImg,
+        alt: "Cardápio digital interativo exibido em smartphone sobre mesa de bistrô com hambúrguer artesanal e chopp",
+        kind: "Experiência na mesa",
+        caption: "Acesso instantâneo ao cardápio digital por QR Code diretamente da mesa."
+      }
+    ],
     tag: "Projeto Demonstrativo",
-    features: ["Cardápio QR Code", "Botão Como Chegar", "Pedidos no WhatsApp"],
+    features: ["Cardápio QR Code", "Agenda de Chopp & Eventos", "Botão Como Chegar", "Pedidos no WhatsApp"],
+    detailedItems: [
+      {
+        title: "Cardápio Interativo Leve",
+        desc: "Abertura rápida no celular sem exigir download de aplicativo ou arquivos pesados em PDF."
+      },
+      {
+        title: "Agenda de Atrações",
+        desc: "Destaque claro para noites de música ao vivo, promoções de chopp em dobro e combos especiais."
+      },
+      {
+        title: "Rotas Diretas no GPS",
+        desc: "Integração objetiva com Google Maps e Waze para conduzir novos clientes até a porta."
+      },
+      {
+        title: "Pedidos e Reservas no WhatsApp",
+        desc: "Botões de ação posicionados nos itens e seções para agilizar o atendimento da casa."
+      }
+    ],
     actionLabel: "Ver Demonstração de Cardápio"
   },
   {
     id: "demo-moda",
     title: "Boutique & Confecção Urbana",
     segment: "Moda & Lojas",
-    description: "Apresente suas coleções sem os custos de uma produção fotográfica tradicional. Modelos virtuais hiper-realistas e catálogo por cores conectado ao WhatsApp.",
+    description: "Modelos virtuais hiper-realistas e catálogo organizado por cores conectado diretamente ao WhatsApp.",
+    editorialSummary: "Solução criada para lojas de vestuário e confecções apresentarem coleções com padrão editorial de estúdio, mantendo consistência visual e agilidade a cada lançamento.",
     headline: "Apresente suas coleções sem os custos de uma produção fotográfica tradicional",
+    concept: "Mais agilidade para lançar novos produtos, mais consistência visual em todo o catálogo e menos custos recorrentes de produção fotográfica.",
     bodyParagraphs: [
       "Não dependa de contratação recorrente de modelos, fotógrafos e estúdios para apresentar cada nova coleção.",
       "Criamos modelos virtuais hiper-realistas, consistentes e personalizados para sua marca, apresentando suas peças de forma profissional e com padrão visual em todo o catálogo."
@@ -357,7 +394,18 @@ export const DEMO_PROJECTS: DemoProject[] = [
         desc: "Leve o cliente diretamente para o WhatsApp ou canal de compra da sua empresa."
       }
     ],
-    image: "/src/assets/images/vitrine_virtual_fashion_1790452627657.jpg",
+    image: vitrineFashionImg,
+    imageAlt: "Modelo virtual hiper-realista vestindo jaqueta urbana em vitrine digital minimalista",
+    media: [
+      {
+        id: "moda-cover",
+        type: "image",
+        src: vitrineFashionImg,
+        alt: "Modelo virtual hiper-realista vestindo jaqueta urbana em vitrine digital minimalista",
+        kind: "Vitrine Editorial",
+        caption: "Modelos virtuais consistentes com estética de catálogo premium para lançamento de coleções."
+      }
+    ],
     tag: "Projeto Demonstrativo",
     features: ["Modelos Virtuais", "Catálogo por Cores", "Apresentação Profissional", "Botão de Compra Direta"],
     actionLabel: "Ver Demonstração de Vitrine"
@@ -366,10 +414,42 @@ export const DEMO_PROJECTS: DemoProject[] = [
     id: "demo-servicos",
     title: "Oficina & Manutenção Especializada",
     segment: "Serviços Técnicos",
-    description: "Portfólio com fotos de antes e depois de consertos, lista de serviços com garantia e solicitação de orçamento rápido.",
-    image: "/src/assets/images/local_business_services_1790452653070.jpg",
+    description: "Portfólio de serviços executados, garantias e solicitação de orçamento rápido em um clique.",
+    editorialSummary: "Estrutura digital desenvolvida para oficinas, assistências técnicas e profissionais especializados comprovarem domínio técnico antes mesmo do primeiro contato comercial.",
+    headline: "Credibilidade técnica que valoriza o orçamento desde a primeira visita",
+    concept: "Organizar provas visuais do trabalho realizado, áreas atendidas e especialidades com garantia em um canal objetivo que filtra curiosos e gera pedidos qualificados.",
+    image: localServicesImg,
+    imageAlt: "Técnico em bancada especializada com computador exibindo portfólio e ordens de serviço",
+    media: [
+      {
+        id: "servicos-cover",
+        type: "image",
+        src: localServicesImg,
+        alt: "Técnico em bancada especializada com computador exibindo portfólio e ordens de serviço",
+        kind: "Estrutura Técnica",
+        caption: "Apresentação clara de especialidades, trabalhos concluídos e solicitação rápida de orçamento."
+      }
+    ],
     tag: "Projeto Demonstrativo",
-    features: ["Portfólio de Obras", "Áreas Atendidas", "Orçamento em 1 Clique"],
+    features: ["Portfólio de Obras", "Áreas Atendidas", "Orçamento em 1 Clique", "Garantias Claras"],
+    detailedItems: [
+      {
+        title: "Galeria de Serviços & Antes e Depois",
+        desc: "Exibição organizada dos trabalhos executados para evidenciar padrão técnico e acabamento."
+      },
+      {
+        title: "Especialidades e Garantias",
+        desc: "Relação objetiva dos atendimentos prestados, diferenciais e condições de garantia."
+      },
+      {
+        title: "Cobertura Geográfica Clara",
+        desc: "Indicação precisa de cidades, bairros ou regiões atendidas pela equipe."
+      },
+      {
+        title: "Orçamento Direto em 1 Clique",
+        desc: "Direcionamento para o WhatsApp com assunto já identificado para agilizar a triagem."
+      }
+    ],
     actionLabel: "Ver Demonstração de Portfólio"
   }
 ];

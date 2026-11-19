@@ -41,12 +41,28 @@ export interface PackageTier {
   disclaimer?: string;
 }
 
+export type ProjectMediaType = 'image' | 'video';
+
+export interface ProjectMediaItem {
+  id: string;
+  type: ProjectMediaType;
+  src: string;
+  alt: string;
+  caption?: string;
+  kind?: string;
+  poster?: string;
+}
+
 export interface DemoProject {
   id: string;
   title: string;
   segment: string;
   description: string;
+  editorialSummary?: string;
+  concept?: string;
   image: string;
+  imageAlt?: string;
+  media?: ProjectMediaItem[];
   tag: string;
   features: string[];
   actionLabel: string;
