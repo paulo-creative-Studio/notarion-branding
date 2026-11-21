@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, PhoneCall, Check, ArrowRight, MapPin, MessageSquare, Star } from 'lucide-react';
+import { Sparkles, PhoneCall, Check, ArrowRight, MapPin, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from '../data/content';
 
 interface ConversionCtaSectionProps {
@@ -66,7 +66,7 @@ export const ConversionCtaSection: React.FC<ConversionCtaSectionProps> = ({
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-300">
                 <Check className="w-4 h-4 text-[#d4af37] shrink-0" />
-                <span>Sem compromisso de contratação prévia</span>
+                <span>Sem compromisso de contratação</span>
               </div>
               <div className="flex items-center gap-3 text-xs sm:text-sm text-zinc-300">
                 <Check className="w-4 h-4 text-[#d4af37] shrink-0" />
@@ -204,7 +204,7 @@ export const ConversionCtaSection: React.FC<ConversionCtaSectionProps> = ({
                           </div>
                         </div>
                         <span className="text-[10px] font-semibold text-emerald-400 flex items-center gap-1">
-                          <Star className="w-3 h-3 fill-amber-400 text-amber-400" /> 5.0 no Google
+                          Prévia ilustrativa
                         </span>
                       </div>
                     </div>

@@ -266,7 +266,7 @@ export const PACKAGES_DATA: PackageTier[] = [
     title: "Presença Digital",
     subtitle: "Uma apresentação profissional para empresas que precisam ser encontradas e contatadas com facilidade.",
     priceTag: "R$ 497",
-    priceNote: "Valor atual do site · pagamento único",
+    priceNote: "Pagamento único · manutenção contratada à parte",
     popular: false,
     featuresTitle: "O que está incluído:",
     features: [
@@ -285,7 +285,7 @@ export const PACKAGES_DATA: PackageTier[] = [
     title: "Negócio Digital",
     subtitle: "Uma vitrine organizada para produtos, serviços, cardápios, portfólios e campanhas.",
     priceTag: "R$ 797",
-    priceNote: "Valor atual do site · pagamento único",
+    priceNote: "Pagamento único · manutenção contratada à parte",
     popular: true,
     featuresTitle: "O que está incluído:",
     features: [

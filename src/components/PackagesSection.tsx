@@ -98,7 +98,7 @@ export const PackagesSection: React.FC<PackagesSectionProps> = ({
 
                   {isFeatured && (
                     <div className="absolute right-0 top-0 bg-[#d4af37] text-[#090a0c] text-[9px] tracking-[0.14em] font-bold px-3.5 py-2 uppercase">
-                      Maior abrangência
+                      Recomendado
                     </div>
                   )}
 
