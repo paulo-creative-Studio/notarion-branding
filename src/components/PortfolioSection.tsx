@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Eye, ArrowRight, ImageOff } from 'lucide-react';
 import { DEMO_PROJECTS } from '../data/content';
 import { ProjectShowcaseModal } from './ProjectShowcaseModal';
@@ -7,9 +7,51 @@ interface PortfolioSectionProps {
   onOpenDemoModal: (demoTitle?: string) => void;
 }
 
+const getInitialVisibility = (): Record<string, boolean> => {
+  if (typeof window === 'undefined') return {};
+  const prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+  const noObserver = !('IntersectionObserver' in window);
+  if (prefersReduced || noObserver) {
+    return Object.fromEntries(DEMO_PROJECTS.map((p) => [p.id, true]));
+  }
+  return {};
+};
+
 export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenDemoModal }) => {
   const [activeProjectIndex, setActiveProjectIndex] = useState<number | null>(null);
   const [failedCardImages, setFailedCardImages] = useState<Record<string, boolean>>({});
+  const [visibleCards, setVisibleCards] = useState<Record<string, boolean>>(getInitialVisibility);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    if (
+      typeof window === 'undefined' ||
+      !('IntersectionObserver' in window) ||
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const id = (entry.target as HTMLElement).dataset.projectId;
+          if (id) {
+            setVisibleCards((prev) => (prev[id] ? prev : { ...prev, [id]: true }));
+          }
+          observer.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    cardRefs.current.forEach((cardEl) => {
+      if (cardEl) observer.observe(cardEl);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -38,12 +80,19 @@ export const PortfolioSection: React.FC<PortfolioSectionProps> = ({ onOpenDemoMo
           {DEMO_PROJECTS.map((project, index) => {
             const hasFailed = Boolean(failedCardImages[project.id]);
             const mediaCount = project.media?.length ?? 1;
+            const isVisible = Boolean(visibleCards[project.id]);
 
             return (
               <article
                 key={project.id}
+                ref={(el) => {
+                  cardRefs.current[index] = el;
+                }}
+                data-project-id={project.id}
                 onMouseMove={handleMouseMove}
-                className="notarion-portfolio-card group flex flex-col justify-between bg-[#0d0e12] border border-white/10 transition-colors duration-300 relative"
+                className={`notarion-portfolio-card notarion-portfolio-reveal ${
+                  isVisible ? 'is-visible' : ''
+                } group flex flex-col justify-between bg-[#0d0e12] border border-white/10 relative`}
               >
                 <div className="notarion-portfolio-spotlight" aria-hidden="true" />
 

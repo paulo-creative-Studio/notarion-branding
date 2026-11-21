@@ -53,7 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemoModal, onOpenCallModal }) 
               </span>
             </h1>
 
-            <p className="font-italiana text-[1.25rem] sm:text-[1.4rem] text-zinc-100/90 leading-[1.48] tracking-[0.02em] max-w-xl">
+            <p className="font-playwrite font-light text-[1.05rem] sm:text-[1.18rem] text-zinc-100/90 leading-[1.75] tracking-normal max-w-xl">
               Identidade, design e experiências digitais desenvolvidas para valorizar o seu negócio.
             </p>
 
